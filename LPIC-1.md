@@ -6,9 +6,9 @@
 
 ## Sommaire
 
-101 [Architecture système]()
-101.1 [Détermination et configuration des paramètres du matériel]()
-101.2 [Démarrage du système]()
+- 101 [Architecture système]()
+- 101.1 [Détermination et configuration des paramètres du matériel]()
+- 101.2 [Démarrage du système]()
 
 <br>
 
@@ -20,7 +20,11 @@
 
 ### 101.1 **Détermination et configuration des paramètres du matériel** 💾
 
+<br>
+
 **Inspection du matériel**
+
+<br>
 
 La commande pour identifier les périphériques connectés en PCI (Peripheral Component Interconnect) est **lspci**
 
@@ -86,7 +90,11 @@ blacklist <nom_du_module>
 blacklist nouveau
 ```
 
+<br>
+
 **Fichiers d'informations et fichiers de périphériques**
+
+<br>
 
 Les commandes **lspci**, **lsusb** et **lsmod** récupèrent les informations dans des fichiers spéciaux stockés dans les pseudo-systèmes de fichiers /proc et /sys.
 Ces répertoires sont des points de montage dans l'espace RAM pour stocker la configuration d'exécution et les informations sur les processus en cours.
