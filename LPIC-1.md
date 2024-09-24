@@ -90,15 +90,20 @@ blacklist <nom_du_module>
 blacklist nouveau
 ```
 
+![image](https://github.com/user-attachments/assets/c7bc0797-f0a1-4e92-8580-8676a01a192e)
+
+
 <br>
 
 **Fichiers d'informations et fichiers de périphériques**
 
 <br>
 
-Les commandes **lspci**, **lsusb** et **lsmod** récupèrent les informations dans des fichiers spéciaux stockés dans les pseudo-systèmes de fichiers /proc et /sys.
+Les commandes **lspci**, **lsusb** et **lsmod** récupèrent les informations dans des fichiers spéciaux stockés dans les pseudo-systèmes de fichiers **/proc** et **/sys**.
 Ces répertoires sont des points de montage dans l'espace RAM pour stocker la configuration d'exécution et les informations sur les processus en cours.
 Ces pseudo-fs n'existe que lorsque le système est en cours d'exécution.
+
+![image](https://github.com/user-attachments/assets/46802ea1-052b-41fa-a673-213bde1735b5)
 
 ```bash
 # Exemples de fichiers dans /proc
@@ -113,4 +118,12 @@ Ces pseudo-fs n'existe que lorsque le système est en cours d'exécution.
 
 # Liste des cannaux DMA (Direct Memory Access)
 /proc/dma
+```
+
+Les répertoires **/dev** est directement lié aux devices. Chaque fichiers à l'intérieur de **/dev** est associé à un device (/dev/hda1, /dev/hda2, ...)
+
+Les périphériques amovibles sont gérés par le sous-système **udev**, qui créé les devices correspondants dans **/dev**
+
+```bash
+#
 ```
