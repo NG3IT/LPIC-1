@@ -122,8 +122,11 @@ Ces pseudo-fs n'existe que lorsque le système est en cours d'exécution.
 
 Les répertoires **/dev** est directement lié aux devices. Chaque fichiers à l'intérieur de **/dev** est associé à un device (/dev/hda1, /dev/hda2, ...)
 
-Les périphériques amovibles sont gérés par le sous-système **udev**, qui créé les devices correspondants dans **/dev**
+Les périphériques amovibles sont gérés par le sous-système **udev**, qui créé les devices correspondants dans **/dev**. Le noyau Linux capture l'évènement de détection hardware et le transmet au processus udev, qui identifie le périphérique et crée dynamiquement les fichiers correspondants dans /dev, en utilisant un jeu de règles prédéfinies. **udev** se charge des devices déjà présents lors du démarrage du système et ceux ajoutés lorsque le système est en cours d'exécution. **udev** s'appui sur le **sysFS (/sys)** pour les informations relatives au hardware. Le répertoire contenant les règles prédéfinies est **/etc/udev/rules.d/**
 
-```bash
-#
-```
+Voici les dénominations en fonction des types de storage devices :
+- /dev/hda, /dev/hdb, /dev/hdc, ... -> SATA, SCSI, ...
+- /dev/fd0, /dev/fd1, /dev/fd3, ... -> FLoppy
+- /dev/sda1, /dev/sda2, /dev/sdb1, ... -> IDE, SSD, USB, ...
+- /dev/mmcblk0p1, /dev/mmcblk0p2, /dev/mmcblk1p1, ... -> Carte SD
+- /dev/nvme0n1p1, /dev/nvme0n1p2, ... -> NVMe
