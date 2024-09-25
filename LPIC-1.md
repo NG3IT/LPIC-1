@@ -170,3 +170,9 @@ Les **étapes préopératoires pour amorcer un système équipé d'un BIOS** son
 
 **UEFI (Unified Extensible Firmware Interface)**
 
+L'**UEFI** ne s'appuie pas sur le MBR mais **NVRAM** (Non Volatile RAM) attachée à la carte mère dans laquelle se trouve dans **applications EFI** (chargeur d'amorçage, sélecteurs d'OS, outils de diagnostic, ...) contenues dans la **EFI System Partition** (**ESP**). Les systèmes de fichiers compatibles sont le FAT12, le FAT16 et le FAT32. 
+
+Les **étapes préopératoires pour amorcer un système équipé d'un UEFI** sont les suivantes :
+- L'auto-test **POST** (Power-On Self-Test)
+- Activation des composants basiques comme la **sortie vidéo**, le **clavier** et les **médias de stockage**
+- 
