@@ -6,8 +6,8 @@
 
 ## Sommaire
 
-- 101 [Architecture système]()
-- 101.1 [Détermination et configuration des paramètres du matériel]()
+- 101 [Architecture système](https://github.com/NG3IT/LPIC-1/blob/main/LPIC-1.md#101-architecture-syst%C3%A8me-)
+- 101.1 [Détermination et configuration des paramètres du matériel](https://github.com/NG3IT/LPIC-1/blob/main/LPIC-1.md#1011-d%C3%A9termination-et-configuration-des-param%C3%A8tres-du-mat%C3%A9riel-)
 - 101.2 [Démarrage du système]()
 
 <br>
@@ -130,3 +130,43 @@ Voici les dénominations en fonction des types de storage devices :
 - /dev/sda1, /dev/sda2, /dev/sdb1, ... -> IDE, SSD, USB, ...
 - /dev/mmcblk0p1, /dev/mmcblk0p2, /dev/mmcblk1p1, ... -> Carte SD
 - /dev/nvme0n1p1, /dev/nvme0n1p2, ... -> NVMe
+
+<br>
+
+---
+
+### 101.2 **Détermination et configuration des paramètres du matériel** 🚀
+
+**Sujet abordés :**
+- Passage de commandes au chargeur de démarrage et passage de paramètres d'amorçage au noyau
+- Démontrer sa connaissance des séquences d’amorçage depuis le BIOS / UEFI jusqu’à l’achèvement des séquences de démarrage
+- Compréhension de l’init SysV et de systemd
+- Sensibilisation à Upstart
+- Consulter les événements de la phase de démarrage dans les journaux (logs)
+
+**Commandes associées :**
+- dmesg
+- journalctl
+- BIOS
+- UEFI
+- bootloader
+- kernel
+- initramfs
+- init
+- SysVinit
+- systemd
+
+<br>
+
+**BIOS (Basic Input/Ouput System)**
+
+![image](https://github.com/user-attachments/assets/2a6a1541-2889-4cdc-b476-ea12fa756153)
+
+Les **étapes préopératoires pour amorcer un système équipé d'un BIOS** sont les suivantes :
+- L'auto-test **POST** (Power-On Self-Test)
+- Activation des composants basiques comme la **sortie vidéo**, le **clavier** et les **médias de stockage**
+- Exécution de la **première phase du chargeur de démarrage** à partir du MBR (les 440 premiers octets)
+- Exécution de la **seconde phase du chargeur de démarrage**
+
+**UEFI (Unified Extensible Firmware Interface)**
+
